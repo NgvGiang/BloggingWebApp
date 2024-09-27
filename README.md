@@ -10,7 +10,7 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
-* Group ID: *Your Group ID here*
-* Project Name: *Your Project Name here*
+* Name: *Nguyen Van Giang*
+* ID: *22BI13132*
+* Group ID: *1*
+* Project Name: *Blogging Platform*
