@@ -10,7 +10,7 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *Nguyen Van Giang*
-* ID: *22BI13132*
+* Name: *Nguyen Vu Huy Khoi*
+* ID: *22BI13222*
 * Group ID: *1*
 * Project Name: *Blogging Platform*
