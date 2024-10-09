@@ -257,6 +257,53 @@ a:hover {
   ); /* Slightly darker green background on hover */
 }
 
+/* Center the search bar form */
+.search-form {
+  display: flex; /* Use flexbox to center the input */
+  justify-content: flex-end; /* Align the input to the right within the navbar */
+  width: 100%; /* Make the form take the full width */
+}
+
+/* Search Bar Styles */
+.search-bar {
+  background-color: rgba(30, 30, 30, 0.8); /* Dark transparent background */
+  border: 2px solid #1db954; /* Spotify green border */
+  color: #ffffff; /* White text for better readability */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the search bar */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  width: 250px; /* Set width */
+}
+
+/* Placeholder text color */
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* White placeholder text */
+}
+
+/* Focus styles for the input */
+.search-bar:focus {
+  background-color: rgba(
+    29,
+    185,
+    84,
+    0.2
+  ); /* Light green background on focus */
+  border-color: #1db954; /* Green border on focus */
+  outline: none; /* Remove default outline */
+  color: #ffffff; /* Ensure text remains white on focus */
+}
+
+/* WebKit pseudo-element to style the "X" clear button */
+.search-bar::-webkit-search-cancel-button {
+  -webkit-appearance: none; /* Remove default styling */
+  height: 15px; /* Bigger height */
+  width: 15px; /* Bigger width */
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M18.3 5.71a1 1 0 0 0-1.42 0L12 10.59 7.12 5.71a1 1 0 1 0-1.42 1.42L10.59 12l-4.89 4.88a1 1 0 0 0 1.42 1.42L12 13.41l4.88 4.89a1 1 0 0 0 1.42-1.42L13.41 12l4.89-4.88a1 1 0 0 0 0-1.42z"/></svg>'); /* White X icon */
+  background-size: contain; /* Fit the icon */
+  background-repeat: no-repeat;
+  cursor: pointer; /* Show pointer cursor */
+}
+
 /* Main content */
 .card {
   background: rgba(30, 30, 30, 0.8); /* Transparent dark background */
@@ -432,10 +479,7 @@ select {
 }
 
 input:focus,
-select:focus
-  .form-check-input:focus
-  .form-check-label:focus
-  .form-control:focus {
+select:focus .form-check-input:focus .form-check-label:focus {
   background-color: rgba(
     255,
     255,
@@ -446,11 +490,64 @@ select:focus
   outline: none; /* Remove default outline */
 }
 
-.custom-select,
-.form-control {
-  background-color: #3e3e3e; /* Dark input backgrounds */
-  color: #ffffff;
-  border-radius: 10px; /* Rounded borders */
+/* Styling for all inputs and select elements */
+.form-control,
+.custom-select {
+  background-color: rgba(30, 30, 30, 0.8); /* Dark transparent background */
+  border: 2px solid #1db954; /* Spotify green border */
+  color: #ffffff; /* White text for better readability */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the inputs */
+  line-height: 1.5; /* Adjust the line-height for vertical centering */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  width: 100%; /* Make inputs take up full width of their container */
+  margin-bottom: 15px; /* Add space between form elements */
+}
+
+/* Placeholder text color for inputs */
+.form-control::placeholder,
+.custom-select::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Lighter white placeholder */
+}
+
+/* Focus state */
+.form-control:focus,
+.custom-select:focus {
+  background-color: rgba(
+    29,
+    185,
+    84,
+    0.2
+  ); /* Light green background on focus */
+  border-color: #1db954; /* Green border on focus */
+  outline: none; /* Remove default outline */
+  color: #ffffff; /* White text on focus */
+}
+
+/* Clear button styles for search input */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; /* Remove default styling */
+  height: 15px; /* Bigger height */
+  width: 15px; /* Bigger width */
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M18.3 5.71a1 1 0 0 0-1.42 0L12 10.59 7.12 5.71a1 1 0 1 0-1.42 1.42L10.59 12l-4.89 4.88a1 1 0 0 0 1.42 1.42L12 13.41l4.88 4.89a1 1 0 0 0 1.42-1.42L13.41 12l4.89-4.88a1 1 0 0 0 0-1.42z"/></svg>'); /* White X icon */
+  background-size: contain; /* Fit the icon */
+  background-repeat: no-repeat;
+  cursor: pointer; /* Show pointer cursor */
+}
+
+/* Show the clear button only when there's text in the input */
+input[type="search"]:not(:placeholder-shown)::-webkit-search-cancel-button {
+  display: inline-block; /* Show clear button when input has content */
+}
+
+/* Styling for custom select dropdown */
+.custom-select {
+  appearance: none; /* Remove default dropdown arrow */
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5H7z"/></svg>'); /* White arrow icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position the custom arrow */
+  background-size: 15px; /* Size of the arrow */
+  padding-right: 40px; /* Make room for the custom arrow */
 }
 
 /* Footer */
